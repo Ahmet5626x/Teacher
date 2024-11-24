@@ -97,10 +97,10 @@ button:hover {
 
 /* Galeri */
 .gallery {
-    display: none; /* Başlangıçta görünmez */
+    display: flex; /* Yatay düzen için flexbox kullanıldı */
     position: relative;
     text-align: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Resimler yan yana hizalanacak */
     justify-content: flex-start;
     gap: 20px;
     overflow-x: auto; /* Yatay kaydırma ekler */
@@ -109,11 +109,10 @@ button:hover {
     padding: 10px 0; /* Yukarı ve aşağıya biraz boşluk bırakır */
 }
 
-
 /* Resim Konteyneri */
 .image-container {
-    display: inline-block; /* Resimleri yan yana yerleştirir */
-    animation: fadeIn 2s ease forwards; /* Her bir resim için animasyon */
+    display: flex; /* Resimleri yan yana hizalamak için flexbox kullanıyoruz */
+    animation: fadeIn 2s ease forwards; /* Animasyon burada çalışacak */
     margin-right: 15px; /* Resimler arasında boşluk bırakır */
     max-width: 100%;
 }
@@ -126,7 +125,6 @@ button:hover {
     border-radius: 10px;
 }
 
-
 .image-container p {
     font-size: 18px;
     color: #333;
@@ -136,13 +134,14 @@ button:hover {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateX(-20px); /* Resimler kayarak gelecek */
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0); /* Resimler ortaya kayarak gelecek */
     }
 }
+
 
 /* Responsive Düzen */
 @media (max-width: 768px) {
@@ -154,9 +153,7 @@ button:hover {
     /* Resimler mobilde kaydırılabilir olacak */
     .gallery {
         display: flex;
-        flex-wrap: nowrap; /* Resimler yatayda kayacak */
-        overflow-x: auto; /* Yatay kaydırma */
-        gap: 10px; /* Resimler arası boşluk */
+        gap: %10; /* Resimler arası boşluk */
     }
 
     .image-container img {
