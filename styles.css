@@ -1,0 +1,171 @@
+/* Genel Gövde Stili */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /* Yatayda ortalama */
+    align-items: center;    /* Dikeyde ortalama */
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Posta Kutusu Konumlandırma */
+.container {
+    position: relative; /* Sabit bir merkez konumu için kullanılır */
+    width: auto; /* İçerik genişliğine göre dinamik ayarlanır */
+    height: auto; /* İçerik yüksekliğine göre dinamik ayarlanır */
+    text-align: center; /* İçerik ortalanır */
+}
+
+/* Mektup Kutusu */
+.letter {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #d2691e;
+    border: 2px solid #d2691e;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 1s ease;
+}
+
+
+.letter-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #d2691e;
+    border-radius: 10px;
+    transform-origin: top;
+    transition: transform 1s ease;
+}
+
+/* Mektup Kutusunun İçeriği */
+.letter-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: #fff8dc;
+    transform: translateY(100%);
+    transition: transform 1s ease;
+    padding: 20px;
+    box-sizing: border-box;
+
+    display: flex; /* Flexbox düzeni */
+    justify-content: center; /* Yatayda ortalama */
+    align-items: center; /* Dikeyde ortalama */
+    text-align: center; /* Metin hizalaması */
+}
+
+/* Kağıt (Metni İçeren Bölüm) */
+.paper {
+    opacity: 0;
+    transform: translateY(50%);
+    transition: opacity 1s ease, transform 1s ease;
+
+    display: contents; /* Flexbox düzeni */
+    flex-direction: column; /* Metin ve diğer içerikleri dikey hizalama */
+    justify-content: center; /* Yatayda ortalama */
+    align-items: center; /* Dikeyde ortalama */
+    text-align: center; /* Metin hizalaması */
+}
+
+
+.heart {
+    font-size: 24px;
+    color: red;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #d2691e;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #a0522d;
+}
+
+/* Galeri */
+.gallery {
+    display: none; /* Başlangıçta görünmez */
+    position: relative;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Resim Konteyneri */
+.image-container {
+    display: none; /* Başlangıçta görünmez */
+    animation: fadeIn 2s ease forwards; /* Her bir resim için animasyon */
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.image-container p {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Resim Geçiş Animasyonu */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Responsive Düzen */
+@media (max-width: 768px) {
+    .letter {
+        width: 250px;
+        height: 150px;
+    }
+    .image-container img {
+        max-width: 200px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* Mobil İçin Ekstra Düzenlemeler */
+@media (max-width: 768px) {
+    .letter {
+        width: 250px;
+        height: 150px;
+    }
+    button {
+        font-size: 14px; /* Butonlar küçültülür */
+    }
+}

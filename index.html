@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğretmenim için</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Mektup Kutusu -->
+        <div class="letter" id="letter">
+            <div class="letter-cover" id="letterCover">
+                <div class="letter-top">
+                    <p>Bir Yeni Posta</p>
+                </div>
+            </div>
+            <div class="letter-content" id="letterContent">
+                <div class="paper">
+                    <div class="heart">&#10084;</div>
+                    <p id="letterText">Sevgili Öğretmenim,<br> Size olan minnettarlığımı ifade etmek istedim. 💐</p>
+                    <button id="nextBtn" style="display: none;">İleri</button>
+                </div>
+            </div>
+        </div>
+        <button id="openBtn">Aç</button> <!-- Aç Butonu -->
+
+        <!-- Galeri -->
+        <div class="gallery" id="gallery" style="display: none;">
+            <div class="image-container">
+                <img src="images/1.jpg" alt="Resim 1">
+                <p>Yılın değil Hayatın <br>Öğretmeni.</p>
+            </div>
+            <div class="image-container">
+                <img src="images/2.jpg" alt="Resim 2">
+                <p>Pırlanta gülüşlü biri.</p>
+            </div>
+            <div class="image-container">
+                <img src="images/3.jpg" alt="Resim 3">
+                <p>Sadece Öğretmen değil aile.</p>
+            </div>
+            <div class="image-container">
+                <img src="images/4.jpg" alt="Resim 4">
+                <p>Paylaştığınız değerler için teşekkürler.</p>
+            </div>
+        </div>
+
+        <!-- Kapat Butonu -->
+        <button id="closeBtn" style="display: none;">Kapat</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
