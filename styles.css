@@ -150,12 +150,6 @@ button:hover {
         height: auto;
     }
 
-    /* Resimler mobilde kaydırılabilir olacak */
-    .gallery {
-        display: flex;
-        gap: %10; /* Resimler arası boşluk */
-    }
-
     .image-container img {
         max-width: 100%; /* Resimler mobilde %100 genişliğinde olacak */
     }
