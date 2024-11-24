@@ -103,19 +103,24 @@ button:hover {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    overflow-x: auto; /* Yatay kaydırma ekler */
+    white-space: nowrap; /* Resimler yatayda kayar */
+    padding: 10px 0; /* Yukarı ve aşağıya biraz boşluk bırakır */
 }
 
 /* Resim Konteyneri */
 .image-container {
-    display: none; /* Başlangıçta görünmez */
+    display: inline-block; /* Resimleri yan yana yerleştirir */
     animation: fadeIn 2s ease forwards; /* Her bir resim için animasyon */
-    margin-bottom: 20px;
+    margin-right: 15px; /* Resimler arasında boşluk bırakır */
+    max-width: 100%;
 }
 
+/* Resimlerin mobil uyumlu olması için düzenleme */
 .image-container img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
+    width: 100%; /* Resmin genişliği %100, ekran boyutuna uyacak şekilde */
+    max-width: 300px; /* Her bir resmin maksimum genişliği 300px olacak */
+    height: auto; /* Yükseklik orantılı kalacak */
     border-radius: 10px;
 }
 
@@ -136,29 +141,18 @@ button:hover {
     }
 }
 
-
-
 /* Responsive Düzen */
 @media (max-width: 768px) {
     .letter {
-        width: 250px;
-        height: 150px;
+        width: 90%; /* Mektup kutusu mobilde biraz daha geniş olur */
+        height: auto;
     }
+
     .image-container img {
-        max-width: %100;
+        max-width: 100%; /* Resimler mobilde %100 genişliğinde olacak */
     }
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
 /* Mobil İçin Ekstra Düzenlemeler */
 @media (max-width: 768px) {
     .letter {
