@@ -145,7 +145,7 @@ button:hover {
         height: 150px;
     }
     .image-container img {
-        max-width: 200px;
+        max-width: %100;
     }
 }
 
