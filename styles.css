@@ -101,12 +101,14 @@ button:hover {
     position: relative;
     text-align: center;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 20px;
     overflow-x: auto; /* Yatay kaydırma ekler */
+    overflow-y: hidden; /* Dikey kaydırma engelleniyor */
     white-space: nowrap; /* Resimler yatayda kayar */
     padding: 10px 0; /* Yukarı ve aşağıya biraz boşluk bırakır */
 }
+
 
 /* Resim Konteyneri */
 .image-container {
@@ -123,6 +125,7 @@ button:hover {
     height: auto; /* Yükseklik orantılı kalacak */
     border-radius: 10px;
 }
+
 
 .image-container p {
     font-size: 18px;
@@ -148,10 +151,19 @@ button:hover {
         height: auto;
     }
 
+    /* Resimler mobilde kaydırılabilir olacak */
+    .gallery {
+        display: flex;
+        flex-wrap: nowrap; /* Resimler yatayda kayacak */
+        overflow-x: auto; /* Yatay kaydırma */
+        gap: 10px; /* Resimler arası boşluk */
+    }
+
     .image-container img {
         max-width: 100%; /* Resimler mobilde %100 genişliğinde olacak */
     }
 }
+
 
 /* Mobil İçin Ekstra Düzenlemeler */
 @media (max-width: 768px) {
